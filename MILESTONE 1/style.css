@@ -1,0 +1,64 @@
+body{
+    background:rgb(172, 243, 255);
+    color: rgb(0, 0, 0);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+h2{
+    text-align: center;
+    text-decoration: dotted underline;
+}
+#resumeform{
+    border: 2px solid black;
+    width: 50%;
+    height: 100%;
+}
+
+input{
+    display: block;
+    border: 2px solid black;
+    border-radius: 30px;
+    
+}
+textarea{
+    display: block;
+    border: 2px solid black;
+    border-radius: 30px;
+
+}
+fieldset{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 3px solid black;/    
+}
+#resumeform fieldset:hover{
+   
+    border-radius: 30px;
+}
+button{
+    background: #909090;
+    border: black solid 2px ;
+    border-radius: 4px;
+    line-height: 30px;
+    border-radius: 40px;
+}
+button:hover{
+    box-shadow: rgb(255, 0, 0) 3px 4px 5px 7px;
+    background:green;
+}
+#resumeOutput{
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 30px;
+   
+}
+#resumeOutput h2{
+    color: black;
+}
