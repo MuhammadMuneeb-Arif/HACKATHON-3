@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>static Resume</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <h2>CV GENERATOR MADE BY MUHAMMAD MUNEEB AHMED</h2>
+
+ 
+        <form id="resumeform">
+            <fieldset>
+                <legend>PERSONAL INFORMATION</legend>
+                <br>
+                <label>NAME </label>
+                <input type="text" class="input"  required id="name"/>
+
+                <BR></BR>
+                <label>EMAIL </label>
+                <input type="email" class="input" required id="email"/>
+                <br><br>
+                <label>PHONE</label>
+                <input type="tel" class="input" required id="phone">
+            </fieldset>
+
+            <fieldset>
+                <legend>EDUCATION </legend>
+                <label>EDUCATION</label>
+                <textarea cols="40" rows="4" required id="education"></textarea>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>EXPERIENCE</legend>
+                <label>EXPERIENCE</label>
+                <textarea cols="40" rows="4" required id="experience"></textarea>
+
+            </fieldset>
+            <fieldset>
+                <legend>SKILLS</legend>
+                <label>SKILLS</label>
+                <textarea cols="40" rows="4" required id="skills"></textarea>
+
+            </fieldset>
+            <br>
+            <br>
+            <button type="submit">GENERATYE YOUR RESUME/CV</button>
+        </form>
+        <br><br>
+        <div id="resumeOutput">
+    
+        </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
