@@ -46,7 +46,7 @@ const Cart = () => {
       )
     );
   };
-  
+
   useEffect(() => {
     cartItems.forEach((item) => {
       updateCartQuantity(item.id, item.inventory || 0);
@@ -93,8 +93,9 @@ const Cart = () => {
         <div className="w-full max-w-4xl bg-white p-6 rounded-lg shadow-md">
           <div className="grid grid-cols-1 gap-6">
             {cartItems.map((product) => (
-              <div key={product.id} className="flex items-center justify-between border-b pb-4 mb-4">
-                <div className="flex items-center gap-4">
+              <div key={product.id} className="flex flex-col sm:flex-row items-center justify-between border-b pb-4 mb-4">
+                {/* Product Info */}
+                <div className="flex items-center gap-4 sm:w-1/2">
                   <img
                     src={product.image}
                     alt={product.name}
@@ -106,20 +107,24 @@ const Cart = () => {
                     <p className="text-lg font-medium text-custom-purple">£{product.price}</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <button
-                    onClick={() => handleDecrement(product.id)}
-                    className="bg-gray-300 px-3 py-1 rounded-md hover:bg-gray-400"
-                  >
-                    -
-                  </button>
-                  <span className="px-4 py-2 border rounded-md">{product.inventory}</span>
-                  <button
-                    onClick={() => handleIncrement(product.id)}
-                    className="bg-gray-300 px-3 py-1 rounded-md hover:bg-gray-400"
-                  >
-                    +
-                  </button>
+
+                {/* Product Quantity and Remove Button */}
+                <div className="flex items-center gap-4 sm:w-1/2 justify-between mt-4 sm:mt-0">
+                  <div className="flex items-center gap-2">
+                    <button
+                      onClick={() => handleDecrement(product.id)}
+                      className="bg-gray-300 px-3 py-1 rounded-md hover:bg-gray-400"
+                    >
+                      -
+                    </button>
+                    <span className="px-4 py-2 border rounded-md">{product.inventory}</span>
+                    <button
+                      onClick={() => handleIncrement(product.id)}
+                      className="bg-gray-300 px-3 py-1 rounded-md hover:bg-gray-400"
+                    >
+                      +
+                    </button>
+                  </div>
                   <button
                     onClick={() => handleRemove(product.id)}
                     className="bg-red-500 text-white px-3 py-2 rounded-md hover:bg-red-600"
@@ -130,6 +135,8 @@ const Cart = () => {
               </div>
             ))}
           </div>
+
+          {/* Cart Summary */}
           <div className="mt-6 text-center">
             <h2 className="text-xl font-medium">Subtotal: £{subTotal}</h2>
             <p className="text-sm text-gray-600 mt-2">Taxes and shipping calculated at checkout</p>

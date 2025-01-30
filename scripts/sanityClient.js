@@ -38,3 +38,22 @@ export const getAll = async () => {
 
   return products;
 };
+
+export const CategoryQuery = async () => {
+  const CategoryNames = await client.fetch(`
+    *[_type == "category"] {
+     name,  
+    }
+  `);
+  return CategoryNames;
+};
+export const particularCategory = async () => {
+  const CategoryNames = await client.fetch(`
+    *[_type == "category"] {
+     name,  
+    }
+  `);
+  return CategoryNames;
+};
+
+

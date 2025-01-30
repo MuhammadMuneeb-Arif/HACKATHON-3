@@ -19,7 +19,7 @@ const Footer = () => {
       <ul className="space-y-2 text-xs lg:text-sm">
         {["New arrivals", "Best sellers", "Recently viewed", "Popular this week", "All products"].map((item, index) => (
           <li key={index}>
-            <Link href="/" className="hover:text-gray-400">
+            <Link href="./productlistings" className="hover:text-gray-400">
               {item}
             </Link>
           </li>
@@ -33,7 +33,7 @@ const Footer = () => {
       <ul className="space-y-2 text-xs lg:text-sm">
         {["Crockery", "Furniture", "Homeware", "Plant pots", "Chairs"].map((item, index) => (
           <li key={index}>
-            <Link href="/" className="hover:text-gray-400">
+            <Link href="./productlistings" className="hover:text-gray-400">
               {item}
             </Link>
           </li>
@@ -41,19 +41,36 @@ const Footer = () => {
       </ul>
     </div>
 
-    {/* Our Company Section */}
     <div className="text-white">
-      <h1 className="text-sm lg:text-lg font-bold mb-4">Our company</h1>
-      <ul className="space-y-2 text-xs lg:text-sm">
-        {["About us", "Vacancies", "Contact us", "Privacy", "Returns policy"].map((item, index) => (
-          <li key={index}>
-            <Link href="/" className="hover:text-gray-400">
-              {item}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+            <h3 className="text-lg font-bold mb-3">Our Company</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a href="./about" className="hover:text-gray-400">
+                  About us
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-gray-400">
+                  Vacancies
+                </a>
+              </li>
+              <li>
+                <a href="./contactus" className="hover:text-gray-400">
+                  Contact us
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-gray-400">
+                  Privacy
+                </a>
+              </li>
+              <li>
+                <a href="./policy" className="hover:text-gray-400">
+                  Returns policy
+                </a>
+              </li>
+            </ul>
+          </div>
 
     {/* Join Mailing List Section */}
     <div className="text-white">

@@ -53,27 +53,27 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-3">Menu</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="hover:text-blue-400">
+                <a href="/productlistings" className="hover:text-blue-400">
                   New arrivals
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-blue-400">
+                <a href="/productlistings" className="hover:text-blue-400">
                   Best sellers
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-blue-400">
+                <a href="/productlistings" className="hover:text-blue-400">
                   Recently viewed
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-blue-400">
+                <a href="/productlistings" className="hover:text-blue-400">
                   Popular this week
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-blue-400">
+                <a href="/productlistings" className="hover:text-blue-400">
                   All products
                 </a>
               </li>
@@ -117,7 +117,7 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-3">Our Company</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="hover:text-blue-400">
+                <a href="/about" className="hover:text-blue-400">
                   About us
                 </a>
               </li>
@@ -127,7 +127,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-blue-400">
+                <a href="./contactus" className="hover:text-blue-400">
                   Contact us
                 </a>
               </li>
@@ -137,7 +137,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-blue-400">
+                <a href="/policy" className="hover:text-blue-400">
                   Returns policy
                 </a>
               </li>

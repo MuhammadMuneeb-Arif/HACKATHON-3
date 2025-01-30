@@ -30,33 +30,16 @@ export const getAll = async () => {
   return produts;
 };
 
-export const singleProductQuery = `
-  *[_type == "product" && slug.current == $slug][0] {
-    _id,
-    name,
-    "slug": slug.current,
-    price,
-    quantity,
-    "category": category->name,
-    tags,
-    "imageUrl": image.asset->url,
-    description,
-    features,
-    dimensions {
-      width,
-      height,
-      depth
-    }
+export const CategoryQuery = `
+  
+   *[_type == "product"] {
+     
+     "category": category->name,
+    
   }
 `;
 
-export const categoryQuery = `
-  *[_type == "category"] {
-    _id,
-    name,
-    "slug": slug.current
-  }
-`;
+
 
 export const productsByCategoryQuery = `
   *[_type == "product" && category._ref == $categoryId] {

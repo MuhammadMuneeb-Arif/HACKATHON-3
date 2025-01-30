@@ -28,10 +28,13 @@ const Navbar = () => {
           <Link href="./shoppingbasket">
             <IoCartOutline size={25} className="text-[#2A254B]" />
           </Link>
+          <Link href="/auth">
           <IoIosContact size={25} className="text-[#2A254B]" />
+          </Link>
         </div>
 
         <div className="flex items-center gap-4 md:hidden">
+          
           <CiSearch size={25} className="text-[#2A254B]" />
           <button
             className="text-2xl focus:outline-none z-30"
@@ -59,7 +62,7 @@ const Navbar = () => {
           <Link href="./productdetail" className="hover:text-gray-500 md:mx-1">
             Tables
           </Link>
-          <Link href="./productdetails" className="hover:text-gray-500 md:mx-1">
+          <Link href="./productlistings" className="hover:text-gray-500 md:mx-1">
             Chairs
           </Link>
           <Link href="./" className="hover:text-gray-500 md:mx-1">
