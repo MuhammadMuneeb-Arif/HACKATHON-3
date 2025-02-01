@@ -1,5 +1,5 @@
 import Footer2 from "../../components/footer2";
-import ProductCard from "../../components/homeproducts";
+import ProductCard from "../../components/products";
 import Navbar1 from "../../components/navbar1";
 import Image from "next/image";
 import Link from "next/link";
@@ -120,7 +120,7 @@ export default function Home2() {
           {/* Product Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {products.map((product) => (
-              <ProductCard key={product.id} product={product} route="home2" />
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         </div>
