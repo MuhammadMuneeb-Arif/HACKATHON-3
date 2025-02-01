@@ -39,7 +39,7 @@ const About = () => {
         </div>
         <div className="w-full md:w-2/5">
           <Image
-            src="/image Block.png"
+            src="/imageBlock.png"
             alt="About main"
             width={630}
             height={478}

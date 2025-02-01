@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Menu (Hidden on Mobile) */}
         <div className="hidden lg:flex items-center space-x-6 ml-auto">
-          <Link href="/shoppingbasket">
+          <Link href="/pages/shoppingbasket">
             <Image
               src="/Shopping--cart.png"
               width={24}

@@ -97,7 +97,7 @@ const Productlistings: React.FC = () => {
       <div className="container mx-auto py-8">
         <div className="w-full h-auto">
           <Image
-            src="/FRAME 143.png"
+            src="/Frame 143.png"
             width={1440}
             height={209}
             alt="hero section"
