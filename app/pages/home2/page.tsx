@@ -18,7 +18,7 @@ export default function Home2() {
       {/* Hero Banner */}
       <div className="relative">
         <Image
-          src="/Hero Blocks.png"
+          src="/HeroBlocks.png"
           width={1440}
           height={704}
           alt="Hero Image"
@@ -137,7 +137,7 @@ export default function Home2() {
         </div>
         <div className="w-full md:w-2/5">
           <Image
-            src="/Image Block.png"
+            src="/imageBlock.png"
             alt="About main"
             width={630}
             height={478}
