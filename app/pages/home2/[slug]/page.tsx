@@ -61,7 +61,7 @@ export default async function ProductPage({
                 {product.name}
               </h1>
               <p className="text-lg md:text-xl text-gray-600 mt-2">
-                ${product.price}
+              £{product.price}
               </p>
               <p className="text-gray-600 mt-6">{product.description}</p>
               <ul className="list-disc ml-4 mt-4">

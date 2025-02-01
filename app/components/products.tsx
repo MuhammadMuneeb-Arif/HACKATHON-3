@@ -9,8 +9,7 @@ interface ProductCardProps {
   product: Product;
 }
 const handleAddToCart = (e: React.MouseEvent, product: any) => {
-  console.log(product)
-  e.preventDefault();
+    e.preventDefault();
   Swal.fire({
     position: "center",
     icon: "success",
@@ -19,12 +18,11 @@ const handleAddToCart = (e: React.MouseEvent, product: any) => {
     timer: 1000,
   });
   addToCart(product);
-  console.log(product);
+  
 };
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-  console.log(product)
-  return (
+    return (
     <Link href={`/pages/productlistings/${product.slug}`}>
       <div className="bg-white hover:shadow-lg transition-shadow duration-300 h-full w-full flex flex-col cursor-pointer">
         <div className="w-full h-64 overflow-hidden">

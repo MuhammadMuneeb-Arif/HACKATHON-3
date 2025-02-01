@@ -40,66 +40,33 @@ export default async function ProductPage({
 
   return (
     <div className="px-4 md:px-8 lg:px-12 py-4 md:py-12">
-      <div className="flex flex-col md:flex-row gap-8 items-center px-4 md:px-8 lg:px-12 py-4 md:py-12">
-        {/* Image Container */}
-        <div className="w-full md:w-1/2 flex justify-center items-center">
-          <div className="relative w-full h-[300px] md:h-auto">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12 py-6">
+        <div className="flex flex-col md:flex-row gap-6 items-center md:items-start">
+          {/* Image Section */}
+          <div className="w-full md:w-1/2 flex justify-center">
             <Image
               src={product.imageUrl}
               alt={product.name}
               width={800}
-              height={500}
-              className="rounded-md object-cover"
+              height={600}
+              className="rounded-md object-contain h-52 md:h-96 w-auto"
             />
           </div>
-        </div>
 
-        {/* Product Details */}
-        <div className="w-full md:w-1/2 px-4 md:px-10 py-3 flex flex-col justify-center">
-          {/* Product Name & Price */}
-          <div className="mb-4">
-            <p className="text-xl md:text-2xl font-semibold text-gray-800">
+          {/* Details Section */}
+          <div className="w-full md:w-1/2 px-4 md:px-6">
+            <h1 className="text-xl md:text-2xl font-semibold text-gray-800">
               {product.name}
-            </p>
-            <p className="py-2 text-lg md:text-xl text-gray-600">
-            £{product.price}
-            </p>
-          </div>
-
-          {/* Description */}
-          <div className="text-gray-600 text-sm md:text-base">
-            <h2 className="font-semibold text-gray-800">Description</h2>
-            <p className="my-4 md:my-6">{product.description}</p>
-            <ul className="ml-4 list-disc space-y-1">
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 mt-2">£{product.price}</p>
+            <p className="text-gray-600 mt-4">{product.description}</p>
+            <ul className="list-disc ml-4 mt-4 space-y-1">
               <li>Premium material</li>
-              <li>Handmade upholstery</li>
-              <li>Timeless classic design</li>
+              <li>Handmade craftsmanship</li>
+              <li>Classic timeless design</li>
             </ul>
-          </div>
-
-          {/* Dimensions Section */}
-          <div className="my-8">
-            <h2 className="font-semibold text-gray-800">Dimensions</h2>
-            <div className="flex gap-12 md:gap-20 text-sm md:text-base mt-4">
-              <div>
-                <h3 className="font-medium">Height</h3>
-                <p>110cm</p>
-              </div>
-              <div>
-                <h3 className="font-medium">Width</h3>
-                <p>75cm</p>
-              </div>
-              <div>
-                <h3 className="font-medium">Depth</h3>
-                <p>50cm</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Quantity Selector & Add to Cart */}
-          <div className="flex flex-wrap justify-between items-center mt-8">
-            <Quantity block={"flex "} />
-            <button className="w-full md:w-[146px] h-[56px] bg-indigo-600 text-white mt-4 md:mt-0 rounded-md hover:bg-indigo-700">
+            <Quantity />
+            <button className="mt-6 w-full md:w-auto bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition duration-300">
               Add to Cart
             </button>
           </div>

@@ -4,6 +4,7 @@ import Navbar from "../../components/navbar";
 import { getCartItems, removeFromCart, updateCartQuantity } from "../Actions/action";
 import Swal from "sweetalert2";
 import { Products } from "../../../types/products2";
+import Image from "next/image";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState<Products[]>([]);
@@ -96,14 +97,16 @@ const Cart = () => {
               <div key={product.id} className="flex flex-col sm:flex-row items-center justify-between border-b pb-4 mb-4">
                 {/* Product Info */}
                 <div className="flex items-center gap-4 sm:w-1/2">
-                  <img
-                    src={product.image}
+                  <Image
+                    src={product.image ? product.image : "/placeholder.png"}
                     alt={product.name}
+                    width={80}
+                    height={80}
                     className="w-20 h-20 rounded-md shadow-sm"
                   />
                   <div>
                     <h2 className="text-lg font-semibold">{product.name}</h2>
-                    <p className="text-sm text-gray-600">{product.description}</p>
+                   
                     <p className="text-lg font-medium text-custom-purple">£{product.price}</p>
                   </div>
                 </div>

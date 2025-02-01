@@ -11,7 +11,7 @@ import Footer from "../../components/footer";
 import ProductCard from "../../components/products";
 import Link from "next/link";
 
-const productdetail = () => {
+const ProductDetails = () => {
   const [amount, setAmount] = useState(1);
 
   const increaseAmount = () => {
@@ -98,7 +98,7 @@ const productdetail = () => {
                 <p className="text-xl md:text-2xl font-semibold">
                   The Dandy Chair
                 </p>
-                <p className="py-2 text-lg md:text-xl">$250</p>
+                <p className="py-2 text-lg md:text-xl">£250</p>
               </div>
               <div className="text-[#505977] text-sm md:text-base">
                 <h1 className="font-semibold">Description</h1>
@@ -232,4 +232,4 @@ const productdetail = () => {
   );
 };
 
-export default productdetail;
+export default ProductDetails;
