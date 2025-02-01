@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-const quantity = (block: any) => {
+const Quantity = (block: any) => {
   const [amount, setAmount] = useState(1);
 
   const increaseAmount = () => {
@@ -35,4 +35,4 @@ const quantity = (block: any) => {
   );
 };
 
-export default quantity;
+export default Quantity;
