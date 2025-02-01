@@ -7,7 +7,7 @@ interface AddToCartButtonProps {
   product: Products; 
 }
 
-const handleAddToCart = (e: React.MouseEvent, product: Products) => {
+const handleAddToCart = (e: React.MouseEvent, product: any) => {
   console.log(product);
   e.preventDefault();
   Swal.fire({
