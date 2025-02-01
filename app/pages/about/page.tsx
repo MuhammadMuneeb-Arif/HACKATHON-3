@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
+import Link from "next/link";
 
 const About = () => {
   return (
@@ -12,8 +13,14 @@ const About = () => {
           A brand built on the love of craftsmanship, quality, and outstanding customer service
         </div>
         <div className="mt-6 md:mt-0">
-          <button className="bg-gray-200 h-12 w-40 rounded-sm text-[#2A254B] hover:bg-gray-300">
-            View our products
+          <button className=" bg-[#F9F9F926] border border-white" >
+           
+          <Link
+              href="./productlistings"
+              className=" bg-gray-950 border border-black text-white py-3 px-8 rounded-md hover:bg-white hover:text-[#2A254B] transition duration-300"
+            >
+           View our products
+            </Link> 
           </button>
         </div>
       </div>
@@ -121,7 +128,7 @@ const About = () => {
           <div className="flex flex-col md:flex-row justify-center items-center mt-6 space-y-4 md:space-y-0 md:space-x-4">
             <input
               type="text"
-              placeholder="you@gmail.com"
+              placeholder="youremail@gmail.com"
               className="bg-gray-100 w-72 md:w-80 lg:w-96 h-12 p-4 rounded-sm"
             />
             <button className="bg-[#2A254B] h-12 w-32 rounded-sm text-white hover:bg-[#231f3f]">

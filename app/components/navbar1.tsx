@@ -24,8 +24,8 @@ const Navbar = () => {
           Avion
         </h1>
 
-        <div className="sm:hidden hidden md:flex gap-4">
-          <Link href="./shoppingbasket">
+        <div className="hidden lg:flex gap-4">
+          <Link href="./pages/shoppingbasket">
             <IoCartOutline size={25} className="text-[#2A254B]" />
           </Link>
           <Link href="/auth">
@@ -33,7 +33,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="flex items-center gap-4 md:hidden">
+        <div className="flex items-center gap-4 lg:hidden">
           
           <CiSearch size={25} className="text-[#2A254B]" />
           <button
@@ -53,27 +53,30 @@ const Navbar = () => {
         } md:static md:w-auto md:translate-x-0 md:bg-transparent md:shadow-none z-20`}
       >
         <nav className="flex md:flex-row flex-col items-center justify-center gap-4">
-          <Link href="./about" className="hover:text-gray-500 md:mx-1">
-            Plant pots
+          <Link href="/pages/home" className="hover:text-gray-500 md:mx-1">
+            Home
           </Link>
-          <Link href="./home2" className="hover:text-gray-500 md:mx-1">
-            Ceramics
+          <Link href="/pages/home2" className="hover:text-gray-500 md:mx-1">
+           HOME 2
           </Link>
-          <Link href="./productdetail" className="hover:text-gray-500 md:mx-1">
-            Tables
+          <Link href="/pages/about" className="hover:text-gray-500 md:mx-1">
+            ABOUT US
           </Link>
-          <Link href="./productlistings" className="hover:text-gray-500 md:mx-1">
-            Chairs
+          <Link href="/pages/contactus" className="hover:text-gray-500 md:mx-1">
+            CONTACT US
           </Link>
-          <Link href="./" className="hover:text-gray-500 md:mx-1">
-            Crockery
+          <Link href="/pages/policy" className="hover:text-gray-500 md:mx-1">
+           PRIVACY POLICY
           </Link>
-          <Link href="#" className="hover:text-gray-500 md:mx-1">
-            Tableware
+          <Link href="/pages/productdetail" className="hover:text-gray-500 md:mx-1">
+            PRODUCT DETAILS
           </Link>
-          <Link href="#" className="hover:text-gray-500 md:mx-1">
-            Cutlery
-          </Link>
+          <Link href="/pages/productlistings" className="hover:text-gray-500 md:mx-1">
+            PRODUCT LISTINGS 
+             </Link>
+          <Link href="/pages/shoppingbasket" className="hover:text-gray-500 md:mx-1">
+          SHOPPING BASKET 
+             </Link>
         </nav>
       </header>
     </div>

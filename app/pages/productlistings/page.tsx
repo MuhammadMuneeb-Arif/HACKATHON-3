@@ -28,7 +28,7 @@ const Productlistings: React.FC = () => {
           id: product._id,
           name: product.name,
           price: product.price.toString(),
-          image: product.imageUrl,
+          imageUrl: product.imageUrl,
           slug: product.slug,
           quantity: product.quantity,
         }));
@@ -120,7 +120,7 @@ const Productlistings: React.FC = () => {
                   categoryItems.map((item) => (
                     <div
                       key={item._id}
-                      className="p-4 border border-gray-300 rounded-lg shadow-md"
+                      className="p-4  rounded-lg shadow-md"
                     >
                       <Image
                         src={item.imageUrl}

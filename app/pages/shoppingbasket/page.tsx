@@ -98,7 +98,7 @@ const Cart = () => {
                 {/* Product Info */}
                 <div className="flex items-center gap-4 sm:w-1/2">
                   <Image
-                    src={product.image ? product.image : "/placeholder.png"}
+                    src={product.imageUrl ? product.imageUrl : "/placeholder.png"}
                     alt={product.name}
                     width={80}
                     height={80}

@@ -5,10 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const products = [
-  { id: 1, name: "The Dandy Chair", image: "/Parent.png", price: "250", slug: "the-dandy-chair" },
-  { id: 2, name: "Rustic Vase Set", image: "/Parent (1).png", price: "155", slug: "rustic-vase-set" },
-  { id: 3, name: "The Silky Vase", image: "/Parent (2).png", price: "125", slug: "the-silky-vase" },
-  { id: 4, name: "The Lucy Lamp", image: "/Parent (3).png", price: "399", slug: "the-lucy-lamp" },
+  { id: 1, name: "The Dandy Chair", imageUrl: "/Parent.png", price: "250", slug: "the-dandy-chair" },
+  { id: 2, name: "Rustic Vase Set", imageUrl: "/Parent (1).png", price: "155", slug: "rustic-vase-set" },
+  { id: 3, name: "The Silky Vase", imageUrl: "/Parent (2).png", price: "125", slug: "the-silky-vase" },
+  { id: 4, name: "The Lucy Lamp", imageUrl: "/Parent (3).png", price: "399", slug: "the-lucy-lamp" },
 ];
 
 export default function Home2() {

@@ -65,9 +65,10 @@ const Navbar: React.FC = () => {
       <div className="hidden lg:flex flex-col items-center gap-4 py-4">
         <nav className="flex items-center justify-center gap-6 text-sm md:text-base font-medium">
           {[
-            "About",
             "Home",
             "Home 2",
+            "About",
+            "Contactus",
             "Product Detail",
             "Product Listings",
             "Shopping Basket",
