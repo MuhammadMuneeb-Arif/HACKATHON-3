@@ -4,6 +4,7 @@ import { addToCart } from "../pages/Actions/action";
 
 import Swal from "sweetalert2";
 import { Products } from "../../types/products2";
+import Image from "next/image";
 
 interface ProductCardProps {
   product: Product;
@@ -26,7 +27,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     <Link href={`/pages/productlistings/${product.slug}`}>
       <div className="bg-white hover:shadow-lg transition-shadow duration-300 h-full w-full flex flex-col cursor-pointer">
         <div className="w-full h-64 overflow-hidden">
-          <img
+          <Image
             src={product.image}
             alt={product.name}
             className="w-full h-full object-cover"
