@@ -6,5 +6,5 @@ const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
 export const client = createClient({
   projectId,
   dataset,
-  useCdn: process.env.NODE_ENV === 'production', // Use CDN for production for faster response times
+  useCdn:true, // Use CDN for production for faster response times
 });

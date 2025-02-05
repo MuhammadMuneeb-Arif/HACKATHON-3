@@ -30,7 +30,7 @@ const HeroSection = () => {
               The furniture brand for the future, with timeless designs
             </h2>
             <Link
-              href="./productlistings"
+              href="/pages/productlistings"
               className="hidden lg:inline-block bg-[#F9F9F926] border border-white text-white py-3 px-8 rounded-md hover:bg-white hover:text-[#2A254B] transition duration-300"
             >
               View collection
@@ -162,7 +162,7 @@ const HeroSection = () => {
             </div>
             <div className="text-center mt-10">
               <Link
-                href="./productlistings"
+                href="/pages/productlistings"
                 className="w-[342px] h-[42px] px-6 py-3 bg-[#F9F9F9] md:w-[170px] md:h-[56px] lg:w-[170px] lg:h-[56px] xl:w-[170px] xl:h-[56px] text-black rounded-lg border border-black transition duration-300"
               >
                 View Collection
