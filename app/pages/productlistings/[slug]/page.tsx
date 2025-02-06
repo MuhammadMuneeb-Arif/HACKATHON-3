@@ -1,8 +1,12 @@
+"use client"
 import { createClient } from "next-sanity";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { client } from "../../../sanity/lib/client";
 import Quantity from "../../../components/quantity";
+import { addToCart } from "../../Actions/action";
+import Header from "../../../components/navbar"
+import Swal from "sweetalert2";
 
 interface Product {
   name: string;
@@ -11,6 +15,17 @@ interface Product {
   quantity: number;
   description: string;
 }
+const handleAddToCart = (e: React.MouseEvent, product: any) => {
+  e.preventDefault();
+  Swal.fire({
+    position: "center",
+    icon: "success",
+    title: `${product.name} added to Cart`,
+    showConfirmButton: false,
+    timer: 1000,
+  });
+  addToCart(product);
+};
 
 async function getProduct(slug: string): Promise<Product | null> {
   const product = await client.fetch(
@@ -39,6 +54,9 @@ export default async function ProductPage({
   console.log(params);
 
   return (
+    <div>
+<Header/>
+    
     <div className="px-4 md:px-8 lg:px-12 py-4 md:py-12">
       <div className="container mx-auto px-4 md:px-8 lg:px-12 py-6">
         <div className="flex flex-col md:flex-row gap-6 items-center md:items-start">
@@ -66,7 +84,7 @@ export default async function ProductPage({
               <li>Classic timeless design</li>
             </ul>
             <Quantity />
-            <button className="mt-6 w-full md:w-auto bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition duration-300">
+            <button onClick={(e) => handleAddToCart(e, product)} className="mt-6 w-full md:w-auto bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition duration-300">
               Add to Cart
             </button>
           </div>
@@ -88,6 +106,7 @@ export default async function ProductPage({
                     );
                   })}
                 </div> */}
+    </div>
     </div>
   );
 }

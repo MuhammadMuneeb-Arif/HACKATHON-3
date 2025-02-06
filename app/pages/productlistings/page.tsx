@@ -75,23 +75,26 @@ const Productlistings: React.FC = () => {
       <Header />
       <div className="py-4">
         <h3 className="text-center font-bold text-lg">CATEGORIES</h3>
-        <div className="flex flex-wrap justify-center gap-4 mt-4">
-          {CategoryNames.length > 0 ? (
-            CategoryNames.map((cat, index) => (
-              <div
-                key={index}
-                onClick={() => setSelectedCategory(cat._id)}
-                className={`cursor-pointer hover:text-gray-500 text-center p-2 bg-gray-100 rounded-lg ${
-                  selectedCategory === cat._id ? "bg-gray-300" : ""
-                }`}
-              >
-                {cat?.name}
-              </div>
-            ))
-          ) : (
-            <p className="text-center text-gray-500">Loading categories...</p>
-          )}
+        <div className="flex flex-wrap justify-center gap-4 mt-4 md:gap-6 lg:gap-8 px-4">
+  {CategoryNames.length > 0 ? (
+    <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 overflow-x-auto whitespace-nowrap">
+      {CategoryNames.map((cat, index) => (
+        <div
+          key={index}
+          onClick={() => setSelectedCategory(cat._id)}
+          className={`cursor-pointer hover:text-gray-500 text-center px-4 py-2 bg-gray-100 rounded-lg transition-all duration-300 ${
+            selectedCategory === cat._id ? "bg-gray-300" : ""
+          }`}
+        >
+          {cat?.name}
         </div>
+      ))}
+    </div>
+  ) : (
+    <p className="text-center text-gray-500 w-full">Loading categories...</p>
+  )}
+</div>
+
       </div>
 
       <div className="container mx-auto py-8">
