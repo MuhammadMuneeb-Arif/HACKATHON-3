@@ -80,17 +80,21 @@ const Cart = () => {
       confirmButtonText: "Yes, proceed!",
     }).then((result) => {
       if (result.isConfirmed) {
+        // Store the subtotal in localStorage
+        localStorage.setItem("subtotal", subTotal.toString());
+  
         Swal.fire({
           title: "Success",
           text: "Your order has been successfully processed",
           icon: "success",
         }).then(() => {
           setCartItems([]);
-          router.push("./payment"); // Fixed redirection
+          router.push("./payment");
         });
       }
     });
   };
+  
 
   const subTotal = cartItems.reduce((acc, product) => acc + Number(product.price) * (product.inventory || 0), 0);
 

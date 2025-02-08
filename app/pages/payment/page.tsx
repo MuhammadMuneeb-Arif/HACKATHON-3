@@ -1,9 +1,38 @@
-"use client";
-import React, { useState } from "react";
-import { CreditCard, Lock, ChevronDown, Shield } from "lucide-react";
+'use client';
 
-function Payment() {
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import Swal from "sweetalert2";
+
+const Payment = () => {
+  const router = useRouter();
   const [paymentMethod, setPaymentMethod] = useState("card");
+  const [subtotal, setSubtotal] = useState(0);
+
+  useEffect(() => {
+    // Retrieve the subtotal from localStorage
+    const storedSubtotal = localStorage.getItem("subtotal");
+    if (storedSubtotal) {
+      setSubtotal(parseFloat(storedSubtotal));
+    }
+  }, []);
+
+  const handlePayment = () => {
+    Swal.fire({
+      title: "Confirm Payment?",
+      text: `You are about to pay £${subtotal.toFixed(2)}`,
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Pay Now!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Success!", "Your payment has been processed.", "success");
+        router.push("/");
+      }
+    });
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -15,7 +44,6 @@ function Payment() {
               <h2 className="text-xl font-semibold text-gray-800 mb-4">
                 Payment method
               </h2>
-
               {/* Payment Method Selection */}
               <div className="space-y-4">
                 <div
@@ -27,32 +55,23 @@ function Payment() {
                   onClick={() => setPaymentMethod("card")}
                 >
                   <div className="flex items-center space-x-3">
-                    <CreditCard className="w-6 h-6 text-blue-600" />
-                    <span className="font-medium text-gray-700">
-                      Credit card
-                    </span>
+                    
+                    <span className="font-medium text-gray-700">Credit card</span>
                   </div>
                 </div>
               </div>
-
               {/* Card Details Form */}
               <div className="mt-6 space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Card number
                   </label>
-                  <div className="relative">
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
-                      placeholder="1234 5678 9012 3456"
-                    />
-                    <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                      
-                    </div>
-                  </div>
+                  <input
+                    type="text"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="1234 5678 9012 3456"
+                  />
                 </div>
-
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -76,46 +95,7 @@ function Payment() {
                   </div>
                 </div>
               </div>
-            </div>
-
-            {/* Billing Information */}
-            <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">
-                Billing information
-              </h2>
-              <div className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      First name
-                    </label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Last name
-                    </label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Email address
-                  </label>
-                  <input
-                    type="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
-                  />
-                </div>
-
-                <div>
+              <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Country or region
                   </label>
@@ -301,25 +281,41 @@ function Payment() {
                       <option>Zambia</option>
                       <option>Zimbabwe</option>
                     </select>
-
-                    <ChevronDown className="w-5 h-5 text-gray-400 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" />
+            </div>
+            </div>
+            {/* Billing Information */}
+            <div className="bg-white rounded-lg shadow-sm p-6 mt-10 border border-gray-200">
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">Billing information</h2>
+              <div className="space-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      First name
+                    </label>
+                    <input type="text" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" />
                   </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Last name
+                    </label>
+                    <input type="text" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" />
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Email address</label>
+                  <input type="email" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" />
                 </div>
               </div>
             </div>
           </div>
-
           {/* Order Summary */}
           <div className="md:col-span-1">
             <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200 sticky top-4">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">
-                Order summary
-              </h2>
-
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">Order summary</h2>
               <div className="space-y-4">
                 <div className="flex justify-between py-2 border-b border-gray-100">
                   <span className="text-gray-600">Subtotal</span>
-                  <span className="font-medium">$99.00</span>
+                  <span className="font-medium">{subtotal}</span>
                 </div>
                 <div className="flex justify-between py-2 border-b border-gray-100">
                   <span className="text-gray-600">Tax</span>
@@ -329,14 +325,12 @@ function Payment() {
                   <span className="text-lg font-semibold">Total</span>
                   <span className="text-lg font-semibold">$108.90</span>
                 </div>
-
                 <button className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-700 transition flex items-center justify-center space-x-2">
-                  <Lock className="w-4 h-4" />
+                 
                   <span>Pay now</span>
                 </button>
-
                 <div className="flex items-center justify-center space-x-2 text-sm text-gray-500 mt-4">
-                  <Shield className="w-4 h-4" />
+                  
                   <span>Payments are secure and encrypted</span>
                 </div>
               </div>
@@ -345,7 +339,8 @@ function Payment() {
         </div>
       </div>
     </div>
+    </div>
   );
-}
+};
 
 export default Payment;
