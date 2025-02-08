@@ -25,7 +25,7 @@ const Navbar = () => {
         </h1>
 
         <div className="hidden lg:flex gap-4">
-          <Link href="./pages/shoppingbasket">
+          <Link href="./shoppingbasket">
             <IoCartOutline size={25} className="text-[#2A254B]" />
           </Link>
           <Link href="/auth">

@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation"; // Corrected import
 import Navbar from "../../components/navbar";
 import { getCartItems, removeFromCart, updateCartQuantity } from "../Actions/action";
 import Swal from "sweetalert2";
@@ -8,6 +9,7 @@ import Image from "next/image";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState<Products[]>([]);
+  const router = useRouter(); // Use router correctly
 
   useEffect(() => {
     setCartItems(getCartItems() || []);
@@ -55,16 +57,16 @@ const Cart = () => {
   }, [cartItems]);
 
   const handleDecrement = (id: string) => {
-    setCartItems((prevItems) => {
-      return prevItems.map((item) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) => {
         if (item.id === id && (item.inventory || 0) > 1) {
           const newQuantity = (item.inventory || 0) - 1;
           handleQuantityChange(id, newQuantity);
           return { ...item, inventory: newQuantity };
         }
         return item;
-      });
-    });
+      })
+    );
   };
 
   const handleProceed = () => {
@@ -78,8 +80,14 @@ const Cart = () => {
       confirmButtonText: "Yes, proceed!",
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire("Success", "Your order has been successfully processed", "success");
-        setCartItems([]);
+        Swal.fire({
+          title: "Success",
+          text: "Your order has been successfully processed",
+          icon: "success",
+        }).then(() => {
+          setCartItems([]);
+          router.push("./payment"); // Fixed redirection
+        });
       }
     });
   };
@@ -106,7 +114,6 @@ const Cart = () => {
                   />
                   <div>
                     <h2 className="text-lg font-semibold">{product.name}</h2>
-                   
                     <p className="text-lg font-medium text-custom-purple">£{product.price}</p>
                   </div>
                 </div>
