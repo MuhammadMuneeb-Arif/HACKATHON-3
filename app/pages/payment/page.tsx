@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { CreditCard, Lock, ChevronDown, Shield } from "lucide-react";
 
-function payment() {
+function Payment() {
   const [paymentMethod, setPaymentMethod] = useState("card");
 
   return (
@@ -348,4 +348,4 @@ function payment() {
   );
 }
 
-export default payment;
+export default Payment;
